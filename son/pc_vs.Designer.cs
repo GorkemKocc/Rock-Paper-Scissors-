@@ -57,12 +57,12 @@
             this.button6 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
+            this.ımageList1 = new System.Windows.Forms.ImageList(this.components);
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            this.ımageList1 = new System.Windows.Forms.ImageList(this.components);
             this.SuspendLayout();
             // 
             // label22
@@ -339,6 +339,15 @@
             this.button4.TabIndex = 37;
             this.button4.UseVisualStyleBackColor = true;
             // 
+            // ımageList1
+            // 
+            this.ımageList1.ColorDepth = System.Windows.Forms.ColorDepth.Depth32Bit;
+            this.ımageList1.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("ımageList1.ImageStream")));
+            this.ımageList1.TransparentColor = System.Drawing.Color.Transparent;
+            this.ımageList1.Images.SetKeyName(0, "Daco_5357819.png");
+            this.ımageList1.Images.SetKeyName(1, "Daco_4906131 (1).png");
+            this.ımageList1.Images.SetKeyName(2, "PngItem_1094400 (2).png");
+            // 
             // button3
             // 
             this.button3.BackColor = System.Drawing.Color.White;
@@ -395,15 +404,6 @@
             this.label1.Size = new System.Drawing.Size(175, 44);
             this.label1.TabIndex = 32;
             this.label1.Text = "gorkem";
-            // 
-            // ımageList1
-            // 
-            this.ımageList1.ColorDepth = System.Windows.Forms.ColorDepth.Depth32Bit;
-            this.ımageList1.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("ımageList1.ImageStream")));
-            this.ımageList1.TransparentColor = System.Drawing.Color.Transparent;
-            this.ımageList1.Images.SetKeyName(0, "Daco_5357819.png");
-            this.ımageList1.Images.SetKeyName(1, "Daco_4906131 (1).png");
-            this.ımageList1.Images.SetKeyName(2, "PngItem_1094400 (2).png");
             // 
             // pc_vs
             // 

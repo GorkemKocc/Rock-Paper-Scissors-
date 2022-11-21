@@ -93,6 +93,7 @@
             this.pc_vs1.Size = new System.Drawing.Size(906, 474);
             this.pc_vs1.TabIndex = 5;
             this.pc_vs1.Visible = false;
+            this.pc_vs1.Load += new System.EventHandler(this.pc_vs1_Load);
             // 
             // Form1
             // 

@@ -11,7 +11,8 @@ using System.Windows.Forms;
 namespace son
 {
     public partial class winner : UserControl
-    {
+    {   
+
         public winner()
         {
             InitializeComponent();
@@ -30,6 +31,14 @@ namespace son
         private void label1_Click(object sender, EventArgs e)
         {
             
+        }
+        public void skor_yaz()
+        {
+
+        }
+        private void winner_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

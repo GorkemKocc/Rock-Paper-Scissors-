@@ -33,6 +33,8 @@ namespace son
             userControl11.kullanıcı1 = kullanıcı11;
             userControl11.bilgisayar1 = bilgisayar11;
             userControl11.bilgisayar2= bilgisayar22;
+            pc_vs1.bilgisayar1 = bilgisayar11;
+            pc_vs1.bilgisayar2 = bilgisayar22;
         }
 
         private void secim1_Load(object sender, EventArgs e)
@@ -53,12 +55,18 @@ namespace son
             vs1.ad();
             vs1.nesnelist();
         }
-
+        private void pc_vs1_Load(object sender, EventArgs e)
+        {
+            
+        }
         private void winner1_Load(object sender, EventArgs e)
         {
-       
+            
             winner1.label1.Text = vs1.winner;
+            winner1.label4.Text = vs1.kullanıcı1.OyuncuAdi + " " + vs1.skor1;
+            winner1.label5.Text = vs1.bilgisayar1.OyuncuAdi + " " + vs1.skor2;
         }
 
+        
     }
 }

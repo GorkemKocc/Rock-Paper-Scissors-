@@ -26,8 +26,9 @@ namespace son
         public int player_olu = 0;
         public List<int> pc_secim = new List<int>();
         public int tekrar = 0, pc_tekrar = 0, hamle = 0;
-        
-        
+        public double skor1, skor2;
+     
+
         public vs()
         {
             InitializeComponent();
@@ -264,11 +265,12 @@ namespace son
         {
             if(hamle == 10 && pc_olu.Count < 5 && player_olu < 5)
             {
-                double skor1 = skor_bul(kullanıcı1);
-                double skor2 = skor_bul(bilgisayar1);
+                skor1 = skor_bul(kullanıcı1);
+                skor2 = skor_bul(bilgisayar1);
                 if(skor1>skor2)
                 {
                     winner = "Kazanan " + label1.Text;
+
                     this.Visible = false;
                     user.Visible = true;
                 }
