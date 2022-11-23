@@ -278,7 +278,14 @@ namespace son
             {
                 skor1 = kullanıcı1.SkorGoster(kullanıcı1);
                 skor2 = bilgisayar1.SkorGoster(bilgisayar1);
-                if(skor1>skor2)
+                if (skor1 == skor2)
+                {
+                    winner = "Berabere";
+                    this.Visible = false;
+                    user.Visible = true;
+                }
+
+                if (skor1>skor2)
                 {
                     winner = "Kazanan " + label1.Text;
 
@@ -291,10 +298,7 @@ namespace son
                     this.Visible = false;
                     user.Visible = true;
                 }
-                if(skor1 == skor2)
-                {
-                    winner = "Berabere";
-                }
+                
             }
 
         }            

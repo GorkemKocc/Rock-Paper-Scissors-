@@ -106,6 +106,8 @@
             this.Controls.Add(this.secim1);
             this.Controls.Add(this.userControl11);
             this.Controls.Add(this.anasayfa1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.MaximizeBox = false;
             this.Name = "Form1";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
