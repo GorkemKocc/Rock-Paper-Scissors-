@@ -296,6 +296,7 @@ namespace son
                     winner = "Berabere";
                 }
             }
+
         }            
 
         public dynamic upgrade_check(dynamic nesne, double can, double seviye)

@@ -317,8 +317,10 @@ namespace son
                 if (skor1 == skor2)
                 {
                     winner = "Berabere";
-                }
+                } 
             }
+            else
+            { oyun(); }
         }
 
         public dynamic upgrade_check(dynamic nesne, double can ,double seviye)
@@ -434,7 +436,7 @@ namespace son
             alive(bilgisayar1.NesneListesi[pc_kart], pc_kart, true);
             
             await Task.Delay(500);
-            oyun();
+           
         }
        
         
