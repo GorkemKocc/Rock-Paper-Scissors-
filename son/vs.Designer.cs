@@ -67,16 +67,16 @@
             // 
             // label1
             // 
-            this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.label1.Cursor = System.Windows.Forms.Cursors.No;
             this.label1.Font = new System.Drawing.Font("Stencil", 22.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label1.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.label1.Location = new System.Drawing.Point(0, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(175, 44);
+            this.label1.Size = new System.Drawing.Size(227, 44);
             this.label1.TabIndex = 0;
             this.label1.Text = "gorkem";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // button1
             // 
@@ -91,18 +91,17 @@
             // label2
             // 
             this.label2.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.label2.Cursor = System.Windows.Forms.Cursors.No;
             this.label2.Font = new System.Drawing.Font("Stencil", 22.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label2.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.label2.Location = new System.Drawing.Point(709, 443);
+            this.label2.Location = new System.Drawing.Point(655, 443);
             this.label2.Name = "label2";
             this.label2.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.label2.Size = new System.Drawing.Size(191, 44);
+            this.label2.Size = new System.Drawing.Size(245, 44);
             this.label2.TabIndex = 3;
             this.label2.Text = "Oyuncu 2";
-            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // button2
             // 
@@ -307,9 +306,9 @@
             this.label13.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label13.Location = new System.Drawing.Point(36, 70);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(62, 17);
+            this.label13.Size = new System.Drawing.Size(55, 17);
             this.label13.TabIndex = 22;
-            this.label13.Text = "Seviye 20";
+            this.label13.Text = "Seviye 0";
             // 
             // label14
             // 
@@ -318,9 +317,9 @@
             this.label14.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label14.Location = new System.Drawing.Point(204, 68);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(62, 17);
+            this.label14.Size = new System.Drawing.Size(55, 17);
             this.label14.TabIndex = 23;
-            this.label14.Text = "Seviye 20";
+            this.label14.Text = "Seviye 0";
             // 
             // label15
             // 
@@ -329,9 +328,9 @@
             this.label15.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label15.Location = new System.Drawing.Point(374, 70);
             this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(62, 17);
+            this.label15.Size = new System.Drawing.Size(55, 17);
             this.label15.TabIndex = 24;
-            this.label15.Text = "Seviye 20";
+            this.label15.Text = "Seviye 0";
             // 
             // label16
             // 
@@ -340,9 +339,9 @@
             this.label16.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label16.Location = new System.Drawing.Point(548, 70);
             this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(62, 17);
+            this.label16.Size = new System.Drawing.Size(55, 17);
             this.label16.TabIndex = 25;
-            this.label16.Text = "Seviye 20";
+            this.label16.Text = "Seviye 0";
             // 
             // label17
             // 
@@ -351,9 +350,9 @@
             this.label17.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label17.Location = new System.Drawing.Point(721, 70);
             this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(62, 17);
+            this.label17.Size = new System.Drawing.Size(55, 17);
             this.label17.TabIndex = 26;
-            this.label17.Text = "Seviye 20";
+            this.label17.Text = "Seviye 0";
             // 
             // label18
             // 
@@ -362,9 +361,9 @@
             this.label18.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label18.Location = new System.Drawing.Point(36, 294);
             this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(62, 17);
+            this.label18.Size = new System.Drawing.Size(55, 17);
             this.label18.TabIndex = 27;
-            this.label18.Text = "Seviye 20";
+            this.label18.Text = "Seviye 0";
             // 
             // label19
             // 
@@ -373,9 +372,9 @@
             this.label19.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label19.Location = new System.Drawing.Point(204, 294);
             this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(62, 17);
+            this.label19.Size = new System.Drawing.Size(55, 17);
             this.label19.TabIndex = 28;
-            this.label19.Text = "Seviye 20";
+            this.label19.Text = "Seviye 0";
             // 
             // label20
             // 
@@ -384,9 +383,9 @@
             this.label20.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label20.Location = new System.Drawing.Point(374, 294);
             this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(62, 17);
+            this.label20.Size = new System.Drawing.Size(55, 17);
             this.label20.TabIndex = 29;
-            this.label20.Text = "Seviye 20";
+            this.label20.Text = "Seviye 0";
             // 
             // label21
             // 
@@ -395,9 +394,9 @@
             this.label21.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label21.Location = new System.Drawing.Point(548, 294);
             this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(62, 17);
+            this.label21.Size = new System.Drawing.Size(55, 17);
             this.label21.TabIndex = 30;
-            this.label21.Text = "Seviye 20";
+            this.label21.Text = "Seviye 0";
             // 
             // label22
             // 
@@ -406,9 +405,9 @@
             this.label22.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label22.Location = new System.Drawing.Point(721, 294);
             this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(62, 17);
+            this.label22.Size = new System.Drawing.Size(55, 17);
             this.label22.TabIndex = 31;
-            this.label22.Text = "Seviye 20";
+            this.label22.Text = "Seviye 0";
             // 
             // vs
             // 

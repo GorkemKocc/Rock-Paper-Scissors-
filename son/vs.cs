@@ -218,16 +218,23 @@ namespace son
             }   
             if(pc_olu.Count == 5)
             {
+                skor1 = kullanıcı1.SkorGoster(kullanıcı1);
+                skor2 = bilgisayar1.SkorGoster(bilgisayar1);
                 winner = "Kazanan "+label1.Text;
                 this.Visible = false;
                 user.Visible = true;           
             }
             if (player_olu.Count == 5)
-            {   
+            {
+                skor1 = kullanıcı1.SkorGoster(kullanıcı1);
+                skor2 = bilgisayar1.SkorGoster(bilgisayar1);
                 winner = "Kazanan "+label2.Text;
                 this.Visible = false;
                 user.Visible = true;
-    
+            }
+            if (skor1 == skor2)
+            {
+                winner = "Berabere";
             }
         }
         
@@ -291,7 +298,7 @@ namespace son
             }
         }            
 
-        public dynamic upgrade_check(dynamic nesne, double can)
+        public dynamic upgrade_check(dynamic nesne, double can, double seviye)
         {
             if(nesne.SeviyePuan > 30)
             {   
@@ -299,7 +306,6 @@ namespace son
                 if (nesne.GetType() == typeof(Tas))
                 {
                     nesne = new AgirTas();
-                   
                 }
                 if (nesne.GetType() == typeof(Kagit))
                 {
@@ -344,13 +350,13 @@ namespace son
             {
                 button1.BackColor = Color.Green;
                 kullanıcı1.NesneListesi[0].durumGuncelle(0,20);
-                kullanıcı1.NesneListesi[0] = upgrade_check(kullanıcı1.NesneListesi[0], kullanıcı1.NesneListesi[0].Dayaniklilik);
+                kullanıcı1.NesneListesi[0] = upgrade_check(kullanıcı1.NesneListesi[0], kullanıcı1.NesneListesi[0].Dayaniklilik, kullanıcı1.NesneListesi[0].SeviyePuan);
             }
             if(pc_damage>player_damage)
             {
                 pc_list[pc_kart].BackColor = Color.Green;
                 bilgisayar1.NesneListesi[pc_kart].durumGuncelle(0, 20);
-                bilgisayar1.NesneListesi[pc_kart] = upgrade_check(bilgisayar1.NesneListesi[pc_kart], bilgisayar1.NesneListesi[pc_kart].Dayaniklilik);
+                bilgisayar1.NesneListesi[pc_kart] = upgrade_check(bilgisayar1.NesneListesi[pc_kart], bilgisayar1.NesneListesi[pc_kart].Dayaniklilik, bilgisayar1.NesneListesi[pc_kart].SeviyePuan);
             }
             await Task.Delay(500);
 
@@ -416,21 +422,20 @@ namespace son
             {
                 button2.BackColor = Color.Green;
                 kullanıcı1.NesneListesi[1].durumGuncelle(0, 20);
-                kullanıcı1.NesneListesi[1] = upgrade_check(kullanıcı1.NesneListesi[1], kullanıcı1.NesneListesi[1].Dayaniklilik);
+                kullanıcı1.NesneListesi[1] = upgrade_check(kullanıcı1.NesneListesi[1], kullanıcı1.NesneListesi[1].Dayaniklilik, kullanıcı1.NesneListesi[1].SeviyePuan);
             }
             if (pc_damage > player_damage)
             {
                 pc_list[pc_kart].BackColor = Color.Green;
                 bilgisayar1.NesneListesi[pc_kart].durumGuncelle(0, 20);
-                bilgisayar1.NesneListesi[pc_kart] = upgrade_check(bilgisayar1.NesneListesi[pc_kart], bilgisayar1.NesneListesi[pc_kart].Dayaniklilik);
+                bilgisayar1.NesneListesi[pc_kart] = upgrade_check(bilgisayar1.NesneListesi[pc_kart], bilgisayar1.NesneListesi[pc_kart].Dayaniklilik, bilgisayar1.NesneListesi[pc_kart].SeviyePuan);
             }
             await Task.Delay(500);
            
             kullanıcı1.NesneListesi[1].durumGuncelle(pc_damage, 0);
-            bilgisayar1.NesneListesi[pc_kart].durumGuncelle(player_damage, 0);
-            alive(kullanıcı1.NesneListesi[1], 1, false);
+            bilgisayar1.NesneListesi[pc_kart].durumGuncelle(player_damage, 0); 
             kullanıcı1.NesneListesi[1].PuanGoster(label4, label14);
-            alive(bilgisayar1.NesneListesi[pc_kart], pc_kart, true);
+           
             pc_label_update(pc_kart);
 
             if (tekrar < 5)
@@ -457,6 +462,9 @@ namespace son
                 player_list[1].BackColor = Color.White;
                 player_list[1].BackColor = Color.White;
             }
+
+            alive(kullanıcı1.NesneListesi[1], 1, false);
+            alive(bilgisayar1.NesneListesi[pc_kart], pc_kart, true);
         }
 
         private async void button3_Click(object sender, EventArgs e)
@@ -488,13 +496,13 @@ namespace son
             {
                 button3.BackColor = Color.Green;
                 kullanıcı1.NesneListesi[2].durumGuncelle(0, 20);
-                kullanıcı1.NesneListesi[2] = upgrade_check(kullanıcı1.NesneListesi[2], kullanıcı1.NesneListesi[2].Dayaniklilik);
+                kullanıcı1.NesneListesi[2] = upgrade_check(kullanıcı1.NesneListesi[2], kullanıcı1.NesneListesi[2].Dayaniklilik, kullanıcı1.NesneListesi[2].SeviyePuan);
             }
             if (pc_damage > player_damage)
             {
                 pc_list[pc_kart].BackColor = Color.Green;
                 bilgisayar1.NesneListesi[pc_kart].durumGuncelle(0, 20);
-                bilgisayar1.NesneListesi[pc_kart] = upgrade_check(bilgisayar1.NesneListesi[pc_kart], bilgisayar1.NesneListesi[pc_kart].Dayaniklilik);
+                bilgisayar1.NesneListesi[pc_kart] = upgrade_check(bilgisayar1.NesneListesi[pc_kart], bilgisayar1.NesneListesi[pc_kart].Dayaniklilik, bilgisayar1.NesneListesi[pc_kart].SeviyePuan);
             }
             await Task.Delay(500);
 
@@ -560,13 +568,13 @@ namespace son
             {
                 button4.BackColor = Color.Green;
                 kullanıcı1.NesneListesi[3].durumGuncelle(0, 20);
-                kullanıcı1.NesneListesi[3] = upgrade_check(kullanıcı1.NesneListesi[3], kullanıcı1.NesneListesi[3].Dayaniklilik);
+                kullanıcı1.NesneListesi[3] = upgrade_check(kullanıcı1.NesneListesi[3], kullanıcı1.NesneListesi[3].Dayaniklilik, kullanıcı1.NesneListesi[3].SeviyePuan);
             }
             if (pc_damage > player_damage)
             {
                 pc_list[pc_kart].BackColor = Color.Green;
                 bilgisayar1.NesneListesi[pc_kart].durumGuncelle(0, 20);
-                bilgisayar1.NesneListesi[pc_kart] = upgrade_check(bilgisayar1.NesneListesi[pc_kart], bilgisayar1.NesneListesi[pc_kart].Dayaniklilik);
+                bilgisayar1.NesneListesi[pc_kart] = upgrade_check(bilgisayar1.NesneListesi[pc_kart], bilgisayar1.NesneListesi[pc_kart].Dayaniklilik, bilgisayar1.NesneListesi[pc_kart].SeviyePuan);
             }
             await Task.Delay(500);
 
@@ -632,13 +640,13 @@ namespace son
             {
                 button5.BackColor = Color.Green;
                 kullanıcı1.NesneListesi[4].durumGuncelle(0, 20);
-                kullanıcı1.NesneListesi[4] = upgrade_check(kullanıcı1.NesneListesi[4], kullanıcı1.NesneListesi[4].Dayaniklilik);
+                kullanıcı1.NesneListesi[4] = upgrade_check(kullanıcı1.NesneListesi[4], kullanıcı1.NesneListesi[4].Dayaniklilik, kullanıcı1.NesneListesi[4].SeviyePuan);
             }
             if (pc_damage > player_damage)
             {
                 pc_list[pc_kart].BackColor = Color.Green;
                 bilgisayar1.NesneListesi[pc_kart].durumGuncelle(0, 20);
-                bilgisayar1.NesneListesi[pc_kart] = upgrade_check(bilgisayar1.NesneListesi[pc_kart], bilgisayar1.NesneListesi[pc_kart].Dayaniklilik);
+                bilgisayar1.NesneListesi[pc_kart] = upgrade_check(bilgisayar1.NesneListesi[pc_kart], bilgisayar1.NesneListesi[pc_kart].Dayaniklilik, bilgisayar1.NesneListesi[pc_kart].SeviyePuan);
             }
             await Task.Delay(500);
 
