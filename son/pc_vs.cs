@@ -298,7 +298,7 @@ namespace son
 
         public void hamle_kont()
         {
-            if (hamle == 100 && pc_olu.Count < 5 && pc2_olu.Count < 5)
+            if (hamle == 10 && pc_olu.Count < 5 && pc2_olu.Count < 5)
             {
                 double skor1 = skor_bul(bilgisayar1);
                 double skor2 = skor_bul(bilgisayar2);
@@ -313,6 +313,10 @@ namespace son
                     winner = "Kazanan " + label2.Text;
                     this.Visible = false;
                     user.Visible = true;
+                }
+                if (skor1 == skor2)
+                {
+                    winner = "Berabere";
                 }
             }
         }

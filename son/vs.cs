@@ -295,6 +295,10 @@ namespace son
                     this.Visible = false;
                     user.Visible = true;
                 }
+                if(skor1 == skor2)
+                {
+                    winner = "Berabere";
+                }
             }
         }            
 

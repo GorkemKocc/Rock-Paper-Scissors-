@@ -41,8 +41,7 @@ namespace son
 
         private void secim1_Load(object sender, EventArgs e)
         {   
-            p11 = userControl11.p1;
-            p22 = userControl11.p2;
+            
             secim1.user=vs1;
             secim1.kullanıcı1 = kullanıcı11;
             secim1.bilgisayar1= bilgisayar11;   
@@ -51,7 +50,8 @@ namespace son
 
         private void vs1_Load(object sender, EventArgs e)
         {       
-            
+            p11 = userControl11.p1;
+            p22 = userControl11.p2;
             vs1.user = winner1;
             vs1.kullanıcı1 = kullanıcı11;
             vs1.bilgisayar1 = bilgisayar11;
@@ -61,7 +61,7 @@ namespace son
         }
         private void pc_vs1_Load(object sender, EventArgs e)
         {
-            
+            pc_vs1.user = winner1;
         }
 
         private void winner1_Load(object sender, EventArgs e)
