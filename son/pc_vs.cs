@@ -23,7 +23,7 @@ namespace son
         public Button[] pc2_list = new Button[5];
         public Button[] pc_list = new Button[5];
         public Label[] pc_label = new Label[10];
-        public Label[] pc2_label = new Label[5];
+        public Label[] pc2_label = new Label[10];
         public List<int> pc_olu = new List<int>();
         public List<int> pc2_olu = new List<int>();
         public List<int> pc_secim = new List<int>();
@@ -36,12 +36,35 @@ namespace son
 
         private async void pc_vs_Load(object sender, EventArgs e)
         {
+            pc2_label[0] = label3;
+            pc2_label[1] = label4;
+            pc2_label[2] = label5;
+            pc2_label[3] = label6;
+            pc2_label[4] = label7;
+            pc2_label[5] = label13;
+            pc2_label[6] = label14;
+            pc2_label[7] = label15;
+            pc2_label[8] = label16;
+            pc2_label[9] = label17;
+
+
+            pc_label[0] = label8;
+            pc_label[1] = label9;
+            pc_label[2] = label10;
+            pc_label[3] = label11;
+            pc_label[4] = label12;
+            pc_label[5] = label18;
+            pc_label[6] = label19;
+            pc_label[7] = label20;
+            pc_label[8] = label21;
+            pc_label[9] = label22;
+
             ad();
             nesnelist();
-            oyun();
-           // await Task.Delay(1000);
-            //oyun();
-            
+         
+                oyun();
+
+
         }
         
         public void ad()
@@ -74,15 +97,15 @@ namespace son
 
             for (int i = 0; i < 5; i++)
             {
-                if (bilgisayar1.NesneListesi[i].GetType() == typeof(Tas))
+                if (bilgisayar2.NesneListesi[i].GetType() == typeof(Tas))
                 {
                     pc2_list[i].Image = ımageList1.Images[2];
                 }
-                if (bilgisayar1.NesneListesi[i].GetType() == typeof(Kagit))
+                if (bilgisayar2.NesneListesi[i].GetType() == typeof(Kagit))
                 {
                     pc2_list[i].Image = ımageList1.Images[1];
                 }
-                if (bilgisayar1.NesneListesi[i].GetType() == typeof(Makas))
+                if (bilgisayar2.NesneListesi[i].GetType() == typeof(Makas))
                 {
                     pc2_list[i].Image = ımageList1.Images[0];
                 }
@@ -90,51 +113,34 @@ namespace son
 
             for (int i = 0; i < 5; i++)
             {
-                if (bilgisayar2.NesneListesi[i].GetType() == typeof(Tas))
+                if (bilgisayar1.NesneListesi[i].GetType() == typeof(Tas))
                 {
                     pc_list[i].Image = ımageList1.Images[2];
                 }
-                if (bilgisayar2.NesneListesi[i].GetType() == typeof(Kagit))
+                if (bilgisayar1.NesneListesi[i].GetType() == typeof(Kagit))
                 {
                     pc_list[i].Image = ımageList1.Images[1];
                 }
-                if (bilgisayar2.NesneListesi[i].GetType() == typeof(Makas))
+                if (bilgisayar1.NesneListesi[i].GetType() == typeof(Makas))
                 {
                     pc_list[i].Image = ımageList1.Images[0];
                 }
             }
         }
 
-        public void pc_label_update(int x)
-        {
-            pc_label[0] = label3;
-            pc_label[1] = label4;
-            pc_label[2] = label5;
-            pc_label[3] = label6;
-            pc_label[4] = label7;
-            pc_label[5] = label8;
-            pc_label[6] = label9;
-            pc_label[7] = label10; 
-            pc_label[8] = label11; 
-            pc_label[9] = label12; 
-
-            bilgisayar1.NesneListesi[x].PuanGoster(pc_label[x], pc_label[x + 5]);
-
-        }
         public void pc2_label_update(int x)
         {
-            pc2_label[0] = label13;
-            pc2_label[1] = label14;
-            pc2_label[2] = label15;
-            pc2_label[3] = label16;
-            pc2_label[4] = label17;
-            pc2_label[5] = label18;
-            pc2_label[6] = label19;
-            pc2_label[7] = label20;
-            pc2_label[8] = label21;
-            pc2_label[9] = label22;
+            
 
-            bilgisayar1.NesneListesi[x].PuanGoster(pc2_label[x], pc2_label[x + 5]);
+            bilgisayar2.NesneListesi[x].PuanGoster(pc2_label[x], pc2_label[x + 5]);
+
+        }
+
+        public void pc_label_update(int x)
+        {
+            
+
+            bilgisayar1.NesneListesi[x].PuanGoster(pc_label[x], pc_label[x + 5]);
 
         }
 
@@ -210,6 +216,7 @@ namespace son
                     pc_list[x].Enabled = false;
                     nesne.Dayaniklilik = 0;
                     pc_olu.Add(x);
+                    pc_label_update(x);
                 }
             }
             else
@@ -220,6 +227,7 @@ namespace son
                     pc2_list[x].Enabled = false;
                     nesne.Dayaniklilik = 0;
                     pc2_olu.Add(x);
+                    pc2_label_update(x);
                 }
             }
             if (pc_olu.Count == 5)
@@ -237,33 +245,41 @@ namespace son
             }
         }
 
-        public async void tekrar_kont()
+        public  void tekrar_kont()
         {
-            await Task.Delay(50);
-            if (pc2_tekrar == 5)
+            
+            if (pc_tekrar == 5)
             {
                 button6.Enabled = true;
                 button6.BackColor = Color.White;
+                
                 button7.Enabled = true;
                 button7.BackColor = Color.White;
+                
                 button8.Enabled = true;
                 button8.BackColor = Color.White;
+                
                 button9.Enabled = true;
                 button9.BackColor = Color.White;
+               
                 button10.Enabled = true;
                 button10.BackColor = Color.White;
             }
 
-            if (pc_tekrar == 5)
+            if (pc2_tekrar == 5)
             {
                 button1.Enabled = true;
                 button1.BackColor = Color.White;
+                
                 button2.Enabled = true;
                 button2.BackColor = Color.White;
+                
                 button3.Enabled = true;
                 button3.BackColor = Color.White;
+                
                 button4.Enabled = true;
                 button4.BackColor = Color.White;
+                
                 button5.Enabled = true;
                 button5.BackColor = Color.White;
             }
@@ -282,7 +298,7 @@ namespace son
 
         public void hamle_kont()
         {
-            if (hamle == 10 && pc_olu.Count < 5 && pc2_olu.Count < 5)
+            if (hamle == 100 && pc_olu.Count < 5 && pc2_olu.Count < 5)
             {
                 double skor1 = skor_bul(bilgisayar1);
                 double skor2 = skor_bul(bilgisayar2);
@@ -301,7 +317,6 @@ namespace son
             }
         }
 
-    
         public dynamic upgrade_check(dynamic nesne, double can)
         {
             if (nesne.SeviyePuan > 30)
@@ -336,6 +351,7 @@ namespace son
                 pc_kart = random.Next(5);
             }
             pc_secim.Add(pc_kart);
+
             while (pc_olu.Contains(pc_kart))
             {
                 pc_kart = random.Next(5);
@@ -356,17 +372,19 @@ namespace son
             pc2_list[pc2_kart].BackColor = Color.Red;
 
             double pc_etki = etki(bilgisayar1.NesneListesi[pc_kart]);
-            double pc2_etki = etki(bilgisayar2.NesneListesi[0]);
+            double pc2_etki = etki(bilgisayar2.NesneListesi[pc2_kart]);
             a = katsayı(bilgisayar2.NesneListesi[pc2_kart], bilgisayar1.NesneListesi[pc_kart]);
             double pc2_damage = pc2_etki / (a * pc_etki);
             a = katsayı(bilgisayar1.NesneListesi[pc_kart], bilgisayar2.NesneListesi[pc2_kart]);
             double pc_damage = pc_etki / (a * pc2_etki);
             await Task.Delay(500);
+
+
             if (pc2_damage > pc_damage)
             {
                 pc2_list[pc2_kart].BackColor = Color.Green;
-                bilgisayar2.NesneListesi[0].durumGuncelle(0, 20);
-                bilgisayar2.NesneListesi[0] = upgrade_check(bilgisayar2.NesneListesi[pc2_kart], bilgisayar2.NesneListesi[pc2_kart].Dayaniklilik);
+                bilgisayar2.NesneListesi[pc2_kart].durumGuncelle(0, 20);
+                bilgisayar2.NesneListesi[pc2_kart] = upgrade_check(bilgisayar2.NesneListesi[pc2_kart], bilgisayar2.NesneListesi[pc2_kart].Dayaniklilik);
             }
             if (pc_damage > pc2_damage)
             {
@@ -378,11 +396,44 @@ namespace son
 
             bilgisayar2.NesneListesi[pc2_kart].durumGuncelle(pc_damage, 0);
             bilgisayar1.NesneListesi[pc_kart].durumGuncelle(pc2_damage, 0);
-            alive(bilgisayar2.NesneListesi[pc2_kart], 0, false);
-            pc_label_update(pc2_kart);
-            alive(bilgisayar1.NesneListesi[pc_kart], pc_kart, true);
+           
+            pc2_label_update(pc2_kart);
+          
+            
             pc_label_update(pc_kart);
 
+            if (pc2_tekrar < 5)
+            {
+                pc2_list[pc2_kart].Enabled = false;
+                pc2_list[pc2_kart].BackColor = Color.Blue;
+            }
+            pc2_tekrar++;
+            if (pc_tekrar < 5)
+            {
+                pc_list[pc_kart].Enabled = false;
+                pc_list[pc_kart].BackColor = Color.Blue;
+            }
+            
+             if (pc_tekrar >= 5 && pc_olu.Contains(pc_kart) != true && pc2_olu.Contains(pc2_kart) != true)
+            {  
+                
+                pc_list[pc_kart].BackColor = Color.White;
+                pc_list[pc_kart].BackColor = Color.White;
+                pc2_list[pc2_kart].BackColor = Color.White;
+                pc2_list[pc2_kart].BackColor = Color.White;
+            }
+
+            pc_tekrar++;
+            hamle++;
+            tekrar_kont();
+            hamle_kont();
+            alive(bilgisayar2.NesneListesi[pc2_kart], pc2_kart, false);
+            alive(bilgisayar1.NesneListesi[pc_kart], pc_kart, true);
+
+            await Task.Delay(500);
+            oyun();
         }
+       
+        
     }
 }

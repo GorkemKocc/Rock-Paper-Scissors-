@@ -13,6 +13,15 @@ namespace son
 {
     public partial class ad : UserControl
     {
+        public UserControl user = new UserControl();
+        public UserControl user1 = new UserControl();
+        public Kullanıcı kullanıcı1 = new Kullanıcı();
+        public Bilgisayar bilgisayar1 = new Bilgisayar();
+        public Bilgisayar bilgisayar2 = new Bilgisayar();
+        public Label p1 = new Label();
+        public Label p2 = new Label();
+
+
         public ad()
         {
             InitializeComponent();
@@ -22,14 +31,8 @@ namespace son
         {
 
         }
-        
-        public UserControl user = new UserControl();
-        public UserControl user1 = new UserControl();
-        public Kullanıcı kullanıcı1 = new Kullanıcı();
-        public Bilgisayar bilgisayar1 = new Bilgisayar();
-        public Bilgisayar bilgisayar2 = new Bilgisayar();
-       
-        
+
+
         public void pc_random_nesne_secim(dynamic nesne)
         {
             var random = new Random();
@@ -54,7 +57,7 @@ namespace son
                 }
             }
         }
-        private void button1_Click(object sender, EventArgs e)//kullanıcı
+        private void button1_Click(object sender, EventArgs e)
         {
             kullanıcı1.OyuncuAdi = textBox1.Text;
             kullanıcı1.OyuncuID = 1;
@@ -63,7 +66,17 @@ namespace son
             pc_random_nesne_secim(bilgisayar1);
             user.Visible = true;
             this.Visible = false;
-
+            p1.Text= textBox1.Text;
+            p2.Text= textBox2.Text;
+            if (p1.Text == null || p1.Text == "")
+            {
+                p1.Text = "Oyuncu1";
+            }
+                
+                
+            if (p2.Text == null || p2.Text == "")
+                p2.Text = "Oyuncu2";
+                
 
         }
 
@@ -71,13 +84,14 @@ namespace son
         {
             bilgisayar1.OyuncuAdi = textBox1.Text;
             bilgisayar1.OyuncuID = 1;
-            pc_random_nesne_secim(bilgisayar1);
+            bilgisayar1.NesneSec(bilgisayar1);
             bilgisayar2.OyuncuAdi = textBox2.Text;
             bilgisayar2.OyuncuID = 2;
-            pc_random_nesne_secim(bilgisayar2);
+            bilgisayar2.NesneSec(bilgisayar2);
             user1.Visible = true;
             this.Visible = false;
-            
+            p1.Text = textBox1.Text;
+            p2.Text = textBox2.Text;
         }
 
         

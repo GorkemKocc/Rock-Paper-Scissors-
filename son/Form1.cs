@@ -8,6 +8,8 @@ namespace son
         public Kullanıcı kullanıcı11 = new Kullanıcı();
         public Bilgisayar bilgisayar11 = new Bilgisayar();
         public Bilgisayar bilgisayar22 = new Bilgisayar();
+        public Label p11= new Label();
+        public Label p22= new Label();
         
         public Form1()
         {
@@ -38,7 +40,9 @@ namespace son
         }
 
         private void secim1_Load(object sender, EventArgs e)
-        {
+        {   
+            p11 = userControl11.p1;
+            p22 = userControl11.p2;
             secim1.user=vs1;
             secim1.kullanıcı1 = kullanıcı11;
             secim1.bilgisayar1= bilgisayar11;   
@@ -59,12 +63,13 @@ namespace son
         {
             
         }
+
         private void winner1_Load(object sender, EventArgs e)
         {
             
             winner1.label1.Text = vs1.winner;
-            winner1.label4.Text = vs1.kullanıcı1.OyuncuAdi + " " + vs1.skor1;
-            winner1.label5.Text = vs1.bilgisayar1.OyuncuAdi + " " + vs1.skor2;
+            winner1.label4.Text = p11.Text  + " " + vs1.skor1;
+            winner1.label5.Text = p22.Text + " " + vs1.skor2;
         }
 
         

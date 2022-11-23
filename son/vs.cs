@@ -21,9 +21,9 @@ namespace son
         public Button[] player_list = new Button[5];
         public Button[] pc_list= new Button[5];
         public Label[] pc_label = new Label[10];
-        public Label[] player_label = new Label[5];
+        public Label[] player_label = new Label[10];
         public List<int> pc_olu = new List<int>();
-        public int player_olu = 0;
+        public List<int> player_olu = new List<int>();
         public List<int> pc_secim = new List<int>();
         public int tekrar = 0, pc_tekrar = 0, hamle = 0;
         public double skor1, skor2;
@@ -36,10 +36,31 @@ namespace son
 
         private void vs_Load(object sender, EventArgs e)
         {
+            pc_label[0] = label8;
+            pc_label[1] = label9;
+            pc_label[2] = label10;
+            pc_label[3] = label11;
+            pc_label[4] = label12;
+            pc_label[5] = label18;
+            pc_label[6] = label19;
+            pc_label[7] = label20;
+            pc_label[8] = label21;
+            pc_label[9] = label22;
+
+            player_label[0] = label3;
+            player_label[1] = label4;
+            player_label[2] = label5;
+            player_label[3] = label6;
+            player_label[4] = label7;
+            player_label[5] = label13;
+            player_label[6] = label14;
+            player_label[7] = label15;
+            player_label[8] = label16;
+            player_label[9] = label17;
            
 
         }
-        
+
         public void ad()
         {
             if (kullanıcı1.OyuncuAdi == null || kullanıcı1.OyuncuAdi == "")
@@ -103,16 +124,7 @@ namespace son
         
         public void pc_label_update(int x)
         {
-            pc_label[0] = label8;
-            pc_label[1] = label9;
-            pc_label[2] = label10;
-            pc_label[3] = label11;
-            pc_label[4] = label12;
-            pc_label[5] = label18;
-            pc_label[6] = label19;
-            pc_label[7] = label20;
-            pc_label[8] = label21;
-            pc_label[9] = label22;
+            
 
             bilgisayar1.NesneListesi[x].PuanGoster(pc_label[x], pc_label[x+5]);
  
@@ -190,6 +202,7 @@ namespace son
                     pc_list[x].Enabled = false; 
                     nesne.Dayaniklilik = 0;
                     pc_olu.Add(x);
+                    pc_label_update(x);
                 }
             }
             else
@@ -199,7 +212,9 @@ namespace son
                     player_list[x].BackColor = Color.Black;
                     player_list[x].Enabled = false;
                     nesne.Dayaniklilik = 0;
-                    player_olu++;
+                    player_olu.Add(x);
+                    kullanıcı1.NesneListesi[2].PuanGoster(player_label[x], player_label[x+5]);
+
                 }
             }   
             if(pc_olu.Count == 5)
@@ -208,7 +223,7 @@ namespace son
                 this.Visible = false;
                 user.Visible = true;           
             }
-            if (player_olu == 5)
+            if (player_olu.Count == 5)
             {   
                 winner = "Kazanan "+label2.Text;
                 this.Visible = false;
@@ -263,7 +278,7 @@ namespace son
 
         public void hamle_kont()
         {
-            if(hamle == 10 && pc_olu.Count < 5 && player_olu < 5)
+            if(hamle == 10 && pc_olu.Count < 5 && player_olu.Count < 5)
             {
                 skor1 = skor_bul(kullanıcı1);
                 skor2 = skor_bul(bilgisayar1);
@@ -368,6 +383,15 @@ namespace son
             hamle++;
             tekrar_kont();
             hamle_kont();
+
+            if (tekrar >= 5 && pc_olu.Contains(pc_kart) != true && player_olu.Contains(0) != true)
+            {
+
+                pc_list[pc_kart].BackColor = Color.White;
+                pc_list[pc_kart].BackColor = Color.White;
+                player_list[0].BackColor = Color.White;
+                player_list[0].BackColor = Color.White;
+            }
         }
 
         private async void button2_Click(object sender, EventArgs e)
@@ -411,7 +435,7 @@ namespace son
            
             kullanıcı1.NesneListesi[1].durumGuncelle(pc_damage, 0);
             bilgisayar1.NesneListesi[pc_kart].durumGuncelle(player_damage, 0);
-            alive(kullanıcı1.NesneListesi[1], 0, false);
+            alive(kullanıcı1.NesneListesi[1], 1, false);
             kullanıcı1.NesneListesi[1].PuanGoster(label4, label14);
             alive(bilgisayar1.NesneListesi[pc_kart], pc_kart, true);
             pc_label_update(pc_kart);
@@ -431,6 +455,15 @@ namespace son
             hamle++;
             tekrar_kont();
             hamle_kont();
+
+            if (tekrar >= 5 && pc_olu.Contains(pc_kart) != true && player_olu.Contains(1) != true)
+            {
+
+                pc_list[pc_kart].BackColor = Color.White;
+                pc_list[pc_kart].BackColor = Color.White;
+                player_list[1].BackColor = Color.White;
+                player_list[1].BackColor = Color.White;
+            }
         }
 
         private async void button3_Click(object sender, EventArgs e)
@@ -474,7 +507,7 @@ namespace son
 
             kullanıcı1.NesneListesi[2].durumGuncelle(pc_damage, 0);
             bilgisayar1.NesneListesi[pc_kart].durumGuncelle(player_damage, 0);
-            alive(kullanıcı1.NesneListesi[2], 0, false);
+            alive(kullanıcı1.NesneListesi[2], 2, false);
             kullanıcı1.NesneListesi[2].PuanGoster(label5, label15);
             alive(bilgisayar1.NesneListesi[pc_kart], pc_kart, true);
             pc_label_update(pc_kart);
@@ -494,6 +527,15 @@ namespace son
             hamle++;
             tekrar_kont();
             hamle_kont();
+
+            if (tekrar >= 5 && pc_olu.Contains(pc_kart) != true && player_olu.Contains(2) != true)
+            {
+
+                pc_list[pc_kart].BackColor = Color.White;
+                pc_list[pc_kart].BackColor = Color.White;
+                player_list[2].BackColor = Color.White;
+                player_list[2].BackColor = Color.White;
+            }
         }
 
         private async void button4_Click(object sender, EventArgs e)
@@ -537,7 +579,7 @@ namespace son
 
             kullanıcı1.NesneListesi[3].durumGuncelle(pc_damage, 0);
             bilgisayar1.NesneListesi[pc_kart].durumGuncelle(player_damage, 0);
-            alive(kullanıcı1.NesneListesi[3], 0, false);
+            alive(kullanıcı1.NesneListesi[3], 3, false);
             kullanıcı1.NesneListesi[3].PuanGoster(label6, label16);
             alive(bilgisayar1.NesneListesi[pc_kart], pc_kart, true);
             pc_label_update(pc_kart);
@@ -558,6 +600,14 @@ namespace son
             tekrar_kont();
             hamle_kont();
 
+            if (tekrar >= 5 && pc_olu.Contains(pc_kart) != true && player_olu.Contains(3) != true)
+            {
+
+                pc_list[pc_kart].BackColor = Color.White;
+                pc_list[pc_kart].BackColor = Color.White;
+                player_list[3].BackColor = Color.White;
+                player_list[3].BackColor = Color.White;
+            }
         }
 
         private async void button5_Click(object sender, EventArgs e)
@@ -601,7 +651,7 @@ namespace son
 
             kullanıcı1.NesneListesi[4].durumGuncelle(pc_damage, 0);
             bilgisayar1.NesneListesi[pc_kart].durumGuncelle(player_damage, 0);
-            alive(kullanıcı1.NesneListesi[4], 0, false);
+            alive(kullanıcı1.NesneListesi[4], 4, false);
             kullanıcı1.NesneListesi[4].PuanGoster(label7, label17);
             alive(bilgisayar1.NesneListesi[pc_kart], pc_kart, true);
             pc_label_update(pc_kart);
@@ -622,6 +672,15 @@ namespace son
             tekrar_kont();
             hamle_kont();
 
+            if (tekrar >= 5 && pc_olu.Contains(pc_kart) != true && player_olu.Contains(4) != true)
+            {
+
+                pc_list[pc_kart].BackColor = Color.White;
+                pc_list[pc_kart].BackColor = Color.White;
+                player_list[4].BackColor = Color.White;
+                player_list[4].BackColor = Color.White;
+
+            }
         }
 
 
