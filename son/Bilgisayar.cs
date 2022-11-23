@@ -41,9 +41,14 @@ namespace Program
                 }
             }
         }
-        public override void SkorGoster()
+        public override double SkorGoster(dynamic nesne)
         {
-
+            double skor = 0;
+            for (int i = 0; i < 5; i++)
+            {
+                skor += nesne.NesneListesi[i].Dayaniklilik;
+            }
+            return skor;
         }
 
     }

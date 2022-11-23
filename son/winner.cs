@@ -20,22 +20,9 @@ namespace son
 
         private void button1_Click(object sender, EventArgs e)
         {
-
+            Application.Exit();
         }
 
-        private void button2_Click(object sender, EventArgs e)
-        {
-            
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-            
-        }
-        public void skor_yaz()
-        {
-
-        }
         private void winner_Load(object sender, EventArgs e)
         {
 

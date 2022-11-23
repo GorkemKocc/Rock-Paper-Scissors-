@@ -10,7 +10,7 @@ namespace son
         public Bilgisayar bilgisayar22 = new Bilgisayar();
         public Label p11= new Label();
         public Label p22= new Label();
-        
+        public bool pc;
         public Form1()
         {
             InitializeComponent();
@@ -47,7 +47,7 @@ namespace son
             secim1.bilgisayar1= bilgisayar11;   
            
         }
-
+        
         private void vs1_Load(object sender, EventArgs e)
         {       
             p11 = userControl11.p1;
@@ -58,20 +58,33 @@ namespace son
             vs1.bilgisayar2 = bilgisayar22;
             vs1.ad();
             vs1.nesnelist();
+            pc = false;
         }
+        
         private void pc_vs1_Load(object sender, EventArgs e)
         {
+            p11 = userControl11.p1;
+            p22 = userControl11.p2;
             pc_vs1.user = winner1;
+            pc = true;
         }
 
         private void winner1_Load(object sender, EventArgs e)
         {
-            
-            winner1.label1.Text = vs1.winner;
-            winner1.label4.Text = p11.Text  + " " + vs1.skor1;
-            winner1.label5.Text = p22.Text + " " + vs1.skor2;
+            if (pc)
+            {
+                winner1.label1.Text = pc_vs1.winner;
+                winner1.label4.Text = p11.Text + " " + pc_vs1.skor1;    
+                winner1.label5.Text = p22.Text + " " + pc_vs1.skor2;
+            }
+            else
+            {
+                winner1.label1.Text = vs1.winner;
+                winner1.label4.Text = p11.Text + " " + vs1.skor1;
+                winner1.label5.Text = p22.Text + " " + vs1.skor2;
+                
+            }
         }
-
         
     }
 }

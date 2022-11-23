@@ -20,7 +20,7 @@ namespace Program
         private dynamic nesneListesi= new List<dynamic>();
         public dynamic NesneListesi { get => nesneListesi; set => nesneListesi = value; }
      
-        abstract public void SkorGoster();
+        abstract public double SkorGoster(dynamic nesne);
         abstract public void NesneSec(dynamic nesne);
 
         public Oyuncu(int oyuncuID, string oyuncuAdi, int skor)

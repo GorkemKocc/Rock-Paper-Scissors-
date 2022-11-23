@@ -29,6 +29,8 @@ namespace son
         public List<int> pc_secim = new List<int>();
         public List<int> pc2_secim = new List<int>();
         public int pc2_tekrar = 0, pc_tekrar = 0, hamle = 0;
+        public double skor1, skor2;
+
         public pc_vs()
         {
             InitializeComponent();
@@ -286,22 +288,13 @@ namespace son
 
         }
 
-        public double skor_bul(dynamic nesne)
-        {
-            double skor = 0;
-            for (int i = 0; i < 5; i++)
-            {
-                skor += nesne.NesneListesi[i].Dayaniklilik;
-            }
-            return skor;
-        }
 
         public void hamle_kont()
         {
             if (hamle == 10 && pc_olu.Count < 5 && pc2_olu.Count < 5)
             {
-                double skor1 = skor_bul(bilgisayar1);
-                double skor2 = skor_bul(bilgisayar2);
+                skor1 = bilgisayar1.SkorGoster(bilgisayar1);
+                skor2 = bilgisayar2.SkorGoster(bilgisayar2);
                 if (skor1 > skor2)
                 {
                     winner = "Kazanan " + label1.Text;
@@ -433,7 +426,7 @@ namespace son
             hamle_kont();
             alive(bilgisayar2.NesneListesi[pc2_kart], pc2_kart, false);
             alive(bilgisayar1.NesneListesi[pc_kart], pc_kart, true);
-
+            
             await Task.Delay(500);
             oyun();
         }

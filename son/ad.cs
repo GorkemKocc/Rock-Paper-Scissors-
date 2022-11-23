@@ -33,47 +33,21 @@ namespace son
         }
 
 
-        public void pc_random_nesne_secim(dynamic nesne)
-        {
-            var random = new Random();
-            int a;
-            for (int i = 0; i < 5; i++)
-            {
-                a = random.Next(3);
-                if (a == 0)
-                {
-                    dynamic tas = new Tas();
-                    nesne.NesneListesi.Add(tas);
-                }
-                if (a == 1)
-                {
-                    dynamic kagit = new Kagit();
-                    nesne.NesneListesi.Add(kagit);
-                }
-                if (a == 2)
-                {
-                    dynamic makas = new Makas();
-                    nesne.NesneListesi.Add(makas);
-                }
-            }
-        }
+   
         private void button1_Click(object sender, EventArgs e)
         {
             kullanıcı1.OyuncuAdi = textBox1.Text;
             kullanıcı1.OyuncuID = 1;
             bilgisayar1.OyuncuAdi= textBox2.Text;
             bilgisayar1.OyuncuID = 2;
-            pc_random_nesne_secim(bilgisayar1);
+            bilgisayar1.NesneSec(bilgisayar1);
             user.Visible = true;
             this.Visible = false;
             p1.Text= textBox1.Text;
             p2.Text= textBox2.Text;
             if (p1.Text == null || p1.Text == "")
-            {
                 p1.Text = "Oyuncu1";
-            }
-                
-                
+
             if (p2.Text == null || p2.Text == "")
                 p2.Text = "Oyuncu2";
                 
@@ -92,6 +66,11 @@ namespace son
             this.Visible = false;
             p1.Text = textBox1.Text;
             p2.Text = textBox2.Text;
+            if (p1.Text == null || p1.Text == "")
+                p1.Text = "Oyuncu1";
+
+            if (p2.Text == null || p2.Text == "")
+                p2.Text = "Oyuncu2";
         }
 
         
