@@ -9,5 +9,5 @@
 ## In-game Image
 ![image](https://github.com/GorkemKocc/Rock-Paper-Scissors-Game/assets/118227992/5db694b1-daf0-4199-8183-e4dd4eed1d78)
 
-## End-game Screen
+## End-game Image
 ![image](https://github.com/GorkemKocc/Rock-Paper-Scissors-Game/assets/118227992/7123b76b-c088-496e-8e39-ca4788b841ab)
